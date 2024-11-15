@@ -26,7 +26,7 @@ Square_Footage = st.number_input("Square Footage", min_value=0, value=2000)
 Lot_Size = st.number_input("Lot Size (in square feet)", min_value=0, value=0)
 Num_Bathrooms = st.number_input("Number of Bathrooms", min_value=0, value=2)
 Garage_Size = st.number_input("Garage Size", min_value=0, value=2)
-Neighborhood_Quality = st.number_input("Neighborhood Quality", min_value=0, value=2000)  # Assuming categorical
+Neighborhood_Quality = st.number_input("Neighborhood Quality", min_value=0, value=1)  # Assuming categorical
 Year_Built = st.number_input("Year Built", min_value=1800, value=2000)
 
 # Prepare input data with the exact columns required by the model
