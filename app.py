@@ -18,15 +18,15 @@ import pandas as pd
 with open('best_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-st.title("House Price Prediction App")
+st.title("House Price Prediction")
 
 # User inputs for house features
 Num_Bedrooms = st.number_input("Number of Bedrooms", min_value=0, value=3)
 Square_Footage = st.number_input("Square Footage", min_value=0, value=2000)
-Lot_Size = st.number_input("Lot Size (in square feet)", min_value=0, value=5000)
+Lot_Size = st.number_input("Lot Size ", min_value=0, value=0)
 Num_Bathrooms = st.number_input("Number of Bathrooms", min_value=0, value=2)
-Garage_Size = st.number_input("Garage Size (number of cars)", min_value=0, value=2)
-Neighborhood_Quality = st.number_input("Neighborhood Quality", min_value=0, value=2000)  # Assuming categorical
+Garage_Size = st.number_input("Garage Size ", min_value=0, value=2)
+Neighborhood_Quality = st.number_input("Neighborhood Quantity", min_value=0, value=1)  # Assuming categorical
 Year_Built = st.number_input("Year Built", min_value=1800, value=2000)
 
 # Prepare input data with the exact columns required by the model
@@ -43,4 +43,4 @@ input_data = pd.DataFrame({
 # Predict the house price
 if st.button("Predict Price"):
     prediction = model.predict(input_data)
-    st.write(f"Estimated House Price: ${prediction[0]:,.2f}")
+    st.write(f"Estimated House Price: {prediction[0]:,.2f}")
